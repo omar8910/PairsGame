@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #82D2E4;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cronometro {
+    margin: 5vh;
+    font-size: 35px;
+}
+#cartas {
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    width: 70%;
+    gap: 2vh 2vw;
+    
+
+}
+.carta_volteada {
+    background-color: transparent;
+    width: 100%;
+    height: 20vh;
+    margin: 0;
+    padding: 0;
+    perspective: 1000px;
+    transition: all 0.5s ease-in-out;
+}
+.carta_volteada_contenido {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.carta {
+    transform: rotateY(180deg);
+}
+.carta_volteada_frontal,
+.carta_volteada_trasera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.carta_volteada_trasera {
+    color: white;
+    transform: rotateY(180deg);
+}
+
+#victoria {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+#resetear > button{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white;
+    background-color: #82D2E4;
+    padding:1vh;
+    border: 1px solid white;
+    border-radius:10px;
+    font-weight: bold;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+
+@media(max-width: 700px) {
+    #cartas {
+        display: grid;
+        width: 100%;
+        padding-right: 5%;
+        padding-left: 5%;
+        margin-top: 10vh;
+        gap: 3vw 3vh;
+        grid-template-columns: auto auto auto auto auto;
+    }
+    .carta_volteada {
+        width: 100%;
+    }
+    img {
+        width: 120%;
+    }
+    #victoria {
+        margin-top: 0vh;
+    }
+}
