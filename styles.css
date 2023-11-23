@@ -54,6 +54,11 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+
+.carta_volteada_frontal img{
+    cursor: pointer;
+}
+
 .carta_volteada_trasera {
     color: white;
     transform: rotateY(180deg);
